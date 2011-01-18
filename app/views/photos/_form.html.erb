@@ -1,0 +1,15 @@
+<%= form_for(@photo, :html => { :multipart => true }) do |f| %>
+  <% if @photo.errors.any? %>
+    <div id="error_explanation">
+      <% @photo.errors.each do |key, msg| %>
+        <div class="error"><%= msg.capitalize %></div>
+      <% end %>
+    </div>
+  <% end %>
+  <div class="fields">
+    <div class="field">
+      <%= f.file_field :file %>
+    </div>
+  </div>
+<% end %>
+

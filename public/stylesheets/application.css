@@ -1,0 +1,53 @@
+/* 
+    Document   : application
+    Created on : 2011-01-17, 21:23:15
+    Author     : crh
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+body {
+    font-family: Verdana;
+    font-size: 14px;
+}
+
+#links {
+    text-align: right;
+}
+
+#page {
+    width: 900px;
+    margin: 0 auto 0 auto;
+}
+
+#header {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+ul {
+    list-style-type: none;
+}
+
+img {
+    border: none;
+}
+
+.photo {
+    float: left;
+    padding: 10px;
+}
+
+.add {
+    margin-left: 150px;
+    padding: 10px;
+}
+
+.clear {
+    clear: both;
+}

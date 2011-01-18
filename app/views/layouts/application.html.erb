@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Photos</title>
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag :all %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+  <div id="page">
+    <div id="header"><%= link_to 'Photos', root_url %></div>
+    <div id="links">
+      <% unless user_signed_in? %>
+        <%= link_to 'Sign in', new_user_session_url %>
+        &middot;
+        <%= link_to 'Sign up', new_user_registration_url  %>
+      <% else %>
+        <%= link_to 'Upload photo(s)', upload_photos_path %>
+        &middot;
+        <%= link_to 'Edit', edit_user_registration_url %>
+        &middot;
+        <%= link_to 'Logout', destroy_user_session_url %>
+      <% end %>
+    </div>
+    <div id="content">
+      <%= yield %>
+    </div>
+    <div id="footer"></div>
+  </div>
+</body>
+</html>

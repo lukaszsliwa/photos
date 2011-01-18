@@ -1,0 +1,22 @@
+<%= link_to 'Back', photos_url %>
+
+<p>
+  <%= image_tag @photo.file.large.url %>
+</p>
+
+<h2>All comments</h2>
+
+<% if @comments.empty? %>
+Brak komentarzy.
+<% else %>
+<ul>
+  <%= render :partial => 'comments/comment', :collection => @comments %>
+</ul>
+<% end %>
+
+<div id="new-comment"></div>
+<%= render :template => 'comments/new' %>
+
+
+
+

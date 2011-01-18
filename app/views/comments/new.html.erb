@@ -1,0 +1,26 @@
+<h1>New comment</h1>
+
+<%= form_for([@photo, @comment]) do |f| %>
+  <% if @comment.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+      <% @comment.errors.each do |k, msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :author %><br />
+    <%= f.text_field :author %>
+  </div>
+  <div class="field">
+    <%= f.label :content %><br />
+    <%= f.text_area :content %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+

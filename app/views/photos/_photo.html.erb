@@ -1,0 +1,8 @@
+<li id="photo-<%= photo.id %>" class="photo">
+  <%= link_to(photo_url photo) { image_tag photo.file.thumbnail.url } %><br/>
+  <% if user_signed_in? -%>
+  <%= link_to 'Remove photo', photo, :confirm => 'Are you sure?', :method => :delete if current_user.owner?(photo) %>
+  &middot;
+  <% end -%>
+  <%= link_to 'Comment', photo_url(photo, :anchor => 'new-comment') %>
+</li>

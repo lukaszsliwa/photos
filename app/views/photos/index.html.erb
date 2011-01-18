@@ -1,0 +1,11 @@
+
+<ul class="photos">
+  <%= render :partial => 'photo', :collection => @photos %>
+</ul>
+<div class="clear"></div>
+
+<% if @photos.empty? %>
+  Any files. <%= link_to 'Upload', upload_photos_url %> something.
+<% end %>
+
+<%= will_paginate @photos %>
