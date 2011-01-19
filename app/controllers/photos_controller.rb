@@ -67,12 +67,8 @@ class PhotosController < ApplicationController
 
     respond_to do |format|
       if @photo.save
-        format.js { render :text => 'Ok', :layout => false }
-        format.json { render :json => { :result => 'Ok' } }
-        format.html { render :template => 'photos/done', :layout => false } #redirect_to(@photo, :notice => 'Photo was successfully created.') }
+        format.html { render :template => 'photos/done', :layout => false }
       else
-        format.js { render :text => 'Smth went wrong.', :layout => false }
-        format.json { render :json => { :result => 'Smth went wrong.' } }
         format.html { render :action => "new", :layout => false }
       end
     end
